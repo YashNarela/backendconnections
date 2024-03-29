@@ -15,4 +15,21 @@ app.use(express.static("public"))/** any thing in public folder can avaible to a
 /** we can cookieparser  secure cookie in user  */
 app.use(cookieParser())
 
+///routes
+import userRouter from "./src/routes/user.routes.js"
+
+/** router decelration
+ * app.get kr k hum likh dete ssidhe but vo tb hota h jb hum router decelare nhi kr rhe the but 
+ * ab jb router decelare kr rahe h toh humko middleware use krna padega 
+ * middleware khuch nhi jao toh humse milte jana app.use('/users' ,bhai konsa router active karwana h)
+ * ab jaise hi koi /users pr click karega toh uska control jayega uss active wali p in this userRouter wali p
+ * 
+ */
+app.use('/api/v1/users',userRouter)
+
+
+
+
+
+
 export {app}

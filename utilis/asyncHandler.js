@@ -1,7 +1,7 @@
 /** in this we are getting promise so we resolve and catch in catch we pass the err in next part so we can do your work  */
 
 const asyncHandler=(requestHandler) => {
-  (req,res,next)=>{
+ return  (req,res,next)=>{
     Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))
   }
 
